@@ -9,6 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Calendar } from '@ionic-native/calendar';
+import { CalendarModule } from 'ionic3-calendar-en';
+import { EventServiceProvider } from '../providers/event-service/event-service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { Calendar } from '@ionic-native/calendar';
     TasksPage
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
+    CalendarModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -32,7 +37,8 @@ import { Calendar } from '@ionic-native/calendar';
     StatusBar,
     SplashScreen,
     Calendar,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    EventServiceProvider
   ]
 })
 export class AppModule {}

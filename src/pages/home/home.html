@@ -10,5 +10,6 @@
 </ion-header>
 
 <ion-content padding>
-  <label>Events</label>
+  <label>Calendar</label>
+  <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onSelectDate($event)"></ion-calendar>
 </ion-content>

@@ -10,6 +10,68 @@
 </ion-header>
 
 <ion-content padding>
-  <label>Calendar</label>
-  <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onSelectDate($event)"></ion-calendar>
+
+  <div class="calendar">
+    <ion-label>Calendar</ion-label>
+    <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onSelectDate($event)"></ion-calendar>
+  </div>
+
+  <div>
+      <ion-label style="margin-bottom: 0%">Event details</ion-label>
+  </div>
+
+  
+    <ion-scroll class="event-details" scrollY="true">
+      
+      <ion-card>
+        <ion-card-title>
+          Event name
+        </ion-card-title>
+        <ion-card-content>
+          Event description
+        </ion-card-content>
+        <ion-card-content>
+          Event date
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-scroll>
+ 
+
 </ion-content>
+
+<!-- <ion-content>
+  <ion-grid>
+    <ion-row>
+        
+            <ion-label>Calendar</ion-label>
+            
+          
+    </ion-row>
+    <ion-row class="calendar">
+        <ion-col>
+          <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onSelectDate($event)"></ion-calendar>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-label style="margin-bottom: 0%">Event details</ion-label>
+    </ion-row>
+    <ion-row>
+        <ion-scroll class="event-details" scrollY="true">
+      
+            <ion-card>
+              <ion-card-title>
+                Event name
+              </ion-card-title>
+              <ion-card-content>
+                Event description
+              </ion-card-content>
+              <ion-card-content>
+                Event date
+              </ion-card-content>
+            </ion-card>
+            
+          </ion-scroll>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->

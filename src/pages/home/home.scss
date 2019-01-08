@@ -51,5 +51,33 @@ ion-calendar {
       }
     }
   }
+
+.calendar {
+  height: fit-content;
+}
+
+.event-details {
+  padding: 0%;
+}
+
+.card-content {
+  padding: 8px;
+}
+
+ion-label {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #46b592
+}
+
+ion-scroll {
+  height: 160px;
+}
+
+.label {
+  margin: 0%;
+}
+
   
 }

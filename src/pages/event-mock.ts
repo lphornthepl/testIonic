@@ -12,4 +12,10 @@ export const EVENTS: Event[] = [{
     year: 2019,
     description: "Camping",
     name: "GoCAMP"
+},{
+    date: 10,
+    month: 0,
+    year: 2019,
+    description: "Black",
+    name: "GoBack"
 }]

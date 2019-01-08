@@ -10,10 +10,13 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   currentEvents: Event[];
+  eventName: string;
+  eventDescription: string;
   date: number;
   month: number;
   year: number;
   hasEvent: boolean;
+  selectedDate: any;
 
   constructor(public navCtrl: NavController, private eventService: EventServiceProvider) {
     // this.calendar.createCalendar('MyCalendar').then(
@@ -29,13 +32,35 @@ export class HomePage {
   onSelectDate(event) {
     console.log(event)
     this.date = event.date;
-    this.month = event.month+1;
+    this.month = event.month;
     this.year = event.year;
     this.hasEvent = event.hasEvent; 
+
+    if (this.hasEvent){
+      this.selectedDate = this.getAllDayEvent(this.date);
+      // this.eventName = this.selectedDate.name;
+      // this.eventDescription = this.selectedDate.description;
+      // this.month = this.month + 1
+      // console.log("Event name: " + this.eventName + " Event description: " + this.eventDescription);
+      
+    } else {
+      console.log("No event on this day.")
+    }
   }
 
   getAllEvents() {
     this.currentEvents = this.eventService.getEvents();
+  }
+
+  getAllDayEvent(date) {
+    let allEvent = this.eventService.getEvents();
+    allEvent.forEach( event => {
+      if (event.date === date){
+        this.currentEvents.push(event);
+      } else {
+        console.log("No maching event!");
+      }
+    })
   }
 
 }

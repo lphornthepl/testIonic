@@ -16,27 +16,25 @@
     <ion-calendar #calendar [events]="currentEvents" (onDaySelect)="onSelectDate($event)"></ion-calendar>
   </div>
 
-  <div>
-      <ion-label style="margin-bottom: 0%">Event details</ion-label>
+  <div *ngIf="hasEvent">
+      <ion-label style="margin-bottom: 0%">Event list</ion-label>
   </div>
 
-  
-    <ion-scroll class="event-details" scrollY="true">
+    <ion-scroll *ngIf="hasEvent" class="event-details" scrollY="true">
       
       <ion-card>
         <ion-card-title>
-          Event name
+          {{eventName}}
         </ion-card-title>
         <ion-card-content>
-          Event description
+          {{eventDescription}}
         </ion-card-content>
-        <ion-card-content>
-          Event date
-        </ion-card-content>
+        <!-- <ion-card-content>
+          {{date}} / {{month}} / {{year}}
+        </ion-card-content> -->
       </ion-card>
       
     </ion-scroll>
- 
 
 </ion-content>
 

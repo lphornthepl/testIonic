@@ -61,7 +61,13 @@ ion-calendar {
 }
 
 .card-content {
-  padding: 8px;
+  padding: 10px;
+  padding-top: 0%
+}
+
+.card-title {
+  border-top: 5px solid #46b592;
+  padding-left: 10px
 }
 
 ion-label {

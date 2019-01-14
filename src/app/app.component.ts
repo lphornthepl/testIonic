@@ -22,8 +22,8 @@ export class MyApp {
     this.initializeApp();
 
     this.pages = [
-      {title: "Events", component: MainPage},
-      {title: "Tasks", component: TasksPage}
+      {title: "Events", component: MainPage}
+      // {title: "Tasks", component: TasksPage}
     ]
   }
 

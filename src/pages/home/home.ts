@@ -10,6 +10,7 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   currentEvents: Event[];
+  alllDayEvents: Event[];
   eventName: string;
   eventDescription: string;
   date: number;
@@ -30,14 +31,14 @@ export class HomePage {
   }
 
   onSelectDate(event) {
-    console.log(event)
+    // console.log(event);
     this.date = event.date;
     this.month = event.month;
     this.year = event.year;
     this.hasEvent = event.hasEvent; 
 
     if (this.hasEvent){
-      this.selectedDate = this.getAllDayEvent(this.date);
+      this.selectedDate = this.getAllDayEvent(this.date, this.month, this.year);
       // this.eventName = this.selectedDate.name;
       // this.eventDescription = this.selectedDate.description;
       // this.month = this.month + 1
@@ -52,15 +53,19 @@ export class HomePage {
     this.currentEvents = this.eventService.getEvents();
   }
 
-  getAllDayEvent(date) {
+  getAllDayEvent(d, m, y) {
     let allEvent = this.eventService.getEvents();
+    this.alllDayEvents = [];
+    // console.log(allEvent);
     allEvent.forEach( event => {
-      if (event.date === date){
-        this.currentEvents.push(event);
+      console.log(event)
+      if (event.date === d && event.month === m && event.year === y){
+        this.alllDayEvents.push(event);
+        console.log(this.alllDayEvents);
       } else {
         console.log("No maching event!");
       }
-    })
+    }) 
   }
 
 }

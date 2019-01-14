@@ -25,4 +25,8 @@ export class EventServiceProvider {
     return EVENTS.find(event => event.date === eventDate);
   }
 
+  getEventByName(eventName: string) {
+    return EVENTS.find(event => event.name === eventName);
+  }
+
 }

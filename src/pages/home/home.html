@@ -22,12 +22,12 @@
 
     <ion-scroll *ngIf="hasEvent" class="event-details" scrollY="true">
       
-      <ion-card>
+      <ion-card *ngFor="let event of alllDayEvents">
         <ion-card-title>
-          {{eventName}}
+          {{event.name}}
         </ion-card-title>
         <ion-card-content>
-          {{eventDescription}}
+          {{event.description}}
         </ion-card-content>
         <!-- <ion-card-content>
           {{date}} / {{month}} / {{year}}

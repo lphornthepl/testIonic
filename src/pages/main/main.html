@@ -13,6 +13,60 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding *ngIf="allEvent">
+
+  <!-- <ion-card *ngFor="let event of allEvent">
+    <ion-card-title>
+      {{event.name}}
+    </ion-card-title>
+    <ion-card-content>
+      {{event.description}}
+    </ion-card-content>
+    <ion-card-content>
+      {{event.date}} / {{event.month}} / {{event.year}}
+    </ion-card-content>
+  </ion-card> -->
+  <!-- <ion-card>
+      <ion-card-title>
+        Test
+      </ion-card-title>
+      <ion-card-content>
+        eiei
+      </ion-card-content>
+      <ion-card-content>
+        14 / 01 / 2019
+      </ion-card-content>
+    </ion-card> -->
+
+  <ion-list *ngFor="let event of allEvent">
+    <ion-item-sliding #item>
+      <ion-item>
+        <ion-title>{{event.name}}</ion-title>
+        <ion-item>
+          {{event.description}} <br>
+          {{event.date}} / {{event.month}} / {{event.year}}
+        </ion-item>
+      </ion-item>
+      
+      <ion-item-options side="right">
+        <button ion-button (click)="editEvent(event.date,event.month,event.year,event.name,event.description)">Edit</button>
+        <button ion-button (click)="deleteEvent(event.date,event.month,event.year,event.name,event.description)" color="danger">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- <ion-card *ngFor="let event of allEvent">
+    <ion-item-sliding #item>
+      <ion-item>
+        <ion-card-title>{{event.name}}</ion-card-title>
+        <ion-card-content>{{event.description}} <br> {{event.date}} / {{event.month}} / {{event.year}}
+        </ion-card-content>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="editEvent(event.date,event.month,event.year,event.name,event.description)">Edit</button>
+        <button ion-button (click)="deleteEvent(event.date,event.month,event.year,event.name,event.description)" color="danger">Delete</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-card> -->
 
 </ion-content>

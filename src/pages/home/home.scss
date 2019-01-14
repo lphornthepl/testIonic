@@ -12,7 +12,7 @@ ion-calendar {
     }
     .calendar-row {
       &:last-child {
-        border-bottom: 1px solid #46b592;
+        border-bottom: 2px solid #46b592;
       }
       .calendar-col {
         display: flex;
@@ -83,6 +83,20 @@ ion-scroll {
 
 .label {
   margin: 0%;
+}
+
+.scroll-content {
+  padding: 0%;
+}
+
+.card {
+  margin: 0%;
+  margin-bottom: 5px;
+}
+
+ion-card {
+  margin-right: 0%;
+  align-self: center;
 }
 
   

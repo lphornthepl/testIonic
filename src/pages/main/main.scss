@@ -20,4 +20,17 @@ page-main {
         margin: 5pt;
     }
 
+    .back-button{
+        margin: 0%;
+    }
+
+    ion-item {
+        border: 0%;
+    }
+
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border: 0px;
+        margin: 0px;
+    }
+
 }

@@ -7,7 +7,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Events</ion-title>
+    <ion-row>
+      <ion-col>
+        <ion-title>Events</ion-title>
+      </ion-col>
+      <ion-col>
+        <ion-icon name="add"></ion-icon> 
+      </ion-col>
+    </ion-row>
   </ion-navbar>
 
 </ion-header>
@@ -47,7 +54,7 @@
           {{event.date}} / {{event.month}} / {{event.year}}
         </ion-item>
       </ion-item>
-      
+
       <ion-item-options side="right">
         <button ion-button (click)="editEvent(event.date,event.month,event.year,event.name,event.description)">Edit</button>
         <button ion-button (click)="deleteEvent(event.date,event.month,event.year,event.name,event.description)" color="danger">Delete</button>
